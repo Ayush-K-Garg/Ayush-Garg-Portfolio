@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayush Krishna Garg | Software Engineer (Backend & Full-Stack)</title>
+  <meta name="description"
+    content="Ayush Krishna Garg, final-year ECE student at NIT Jamshedpur. Backend and full-stack engineer: C++ distributed systems, Node.js real-time servers, Flutter apps used by 400+ students, and GenAI RAG tooling.">
+  <meta name="author" content="Ayush Krishna Garg">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <!-- Social preview (replace URL and add og-image.png, 1200x630) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ayush Krishna Garg | Software Engineer">
+  <meta property="og:description"
+    content="Backend and full-stack engineer. Distributed systems in C++, real-time servers in Node.js, Flutter apps in production.">
+  <meta property="og:url" content="https://YOUR-DOMAIN-HERE/">
+  <meta property="og:image" content="https://YOUR-DOMAIN-HERE/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚡%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['"JetBrains Mono"', 'monospace'] },
+          colors: { background: '#0a0a0a', surface: '#111111', border: 'rgba(255,255,255,0.08)' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #ededed;
+    }
+
+    ::selection {
+      background: rgba(16, 185, 129, 0.25);
+      color: #10b981;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+
+    section[id] {
+      scroll-margin-top: 5rem;
+    }
+
+    .bento-card {
+      transition: all 0.3s ease;
+    }
+
+    .bento-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .bg-grid {
+      background-size: 30px 30px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+      -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid #10b981;
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .nav-link.active {
+      color: #fff;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .bento-card,
+      .bento-card:hover {
+        transition: none;
+        transform: none;
+      }
+
+      html {
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased relative min-h-screen flex flex-col">
+
+  <a href="#main"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-emerald-500 focus:text-black focus:px-3 focus:py-2 focus:rounded">Skip
+    to content</a>
+  <div class="fixed inset-0 pointer-events-none z-0 bg-grid" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <header class="fixed top-0 w-full z-40 backdrop-blur-xl bg-background/80 border-b border-white/5">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <a href="#top" class="font-mono text-sm font-semibold flex items-center gap-2 shrink-0">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+        <span class="hidden xs:inline sm:inline">Ayush_Krishna_Garg</span>
+        <span class="sm:hidden">AKG</span>
+      </a>
+      <nav aria-label="Primary" class="flex items-center gap-3 sm:gap-5 text-sm text-zinc-400">
+        <a href="#projects" class="nav-link hover:text-white transition">Projects</a>
+        <a href="#experience" class="nav-link hover:text-white transition">Experience</a>
+        <a href="#skills" class="nav-link hover:text-white transition hidden sm:block">Skills</a>
+        <a href="#contact" class="nav-link hover:text-white transition">Contact</a>
+        <a href="Ayushgarg_resume.pdf" download
+          class="px-3 sm:px-4 py-2 rounded-lg bg-emerald-500 text-black font-bold hover:bg-emerald-400 transition shadow-[0_0_15px_rgba(16,185,129,0.2)] whitespace-nowrap">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="relative z-10 flex-grow max-w-5xl mx-auto px-4 sm:px-6 pt-32 pb-24 space-y-28 w-full">
+
+    <!-- HERO -->
+    <section id="top" class="space-y-8">
+      <div class="inline-flex flex-wrap items-center gap-3">
+        <span
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-xs font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true"></span>
+          Open to SDE roles &amp; internships · 2027 graduate
+        </span>
+        <span class="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs font-mono">
+          B.Tech ECE · NIT Jamshedpur
+        </span>
+      </div>
+
+      <div class="space-y-4">
+        <p class="font-mono text-emerald-400 text-sm">Hi, I'm Ayush Krishna Garg</p>
+        <h1
+          class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.1] text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-400">
+          I build backend systems<br class="hidden sm:block"> that hold up under load.
+        </h1>
+        <p class="text-lg text-zinc-400 max-w-2xl leading-relaxed">
+          Software engineer working across C++ distributed systems, real-time Node.js servers, and production Flutter
+          apps.
+          My student portal app is used daily by <span class="text-white font-medium">400+ students</span>, and I rank
+          in the
+          <span class="text-white font-medium">top 7% on LeetCode</span>.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="#projects"
+          class="px-6 py-3 rounded-xl bg-emerald-500 text-black font-bold hover:bg-emerald-400 transition flex items-center gap-2">
+          View projects <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+        <a href="Ayushgarg_resume.pdf" download
+          class="px-6 py-3 rounded-xl border border-white/15 bg-white/5 text-white font-semibold hover:bg-white/10 transition flex items-center gap-2">
+          <i data-lucide="download" class="w-4 h-4"></i> Download resume
+        </a>
+        <a href="mailto:017ayushgarg@gmail.com"
+          class="px-6 py-3 rounded-xl border border-white/15 text-zinc-300 font-semibold hover:text-white hover:bg-white/5 transition flex items-center gap-2">
+          <i data-lucide="mail" class="w-4 h-4"></i> Email me
+        </a>
+      </div>
+
+      <!-- Stat strip -->
+      <dl class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+        <div class="p-4 rounded-xl bg-surface border border-border">
+          <dd class="text-2xl font-extrabold text-white">400+</dd>
+          <dt class="text-xs text-zinc-500 font-mono mt-1">active student users</dt>
+        </div>
+        <div class="p-4 rounded-xl bg-surface border border-border">
+          <dd class="text-2xl font-extrabold text-white">90%</dd>
+          <dt class="text-xs text-zinc-500 font-mono mt-1">faster login (120s → 10s)</dt>
+        </div>
+        <div class="p-4 rounded-xl bg-surface border border-border">
+          <dd class="text-2xl font-extrabold text-white">1828</dd>
+          <dt class="text-xs text-zinc-500 font-mono mt-1">LeetCode rating · top 7%</dt>
+        </div>
+        <div class="p-4 rounded-xl bg-surface border border-border">
+          <dd class="text-2xl font-extrabold text-white">Top 300</dd>
+          <dt class="text-xs text-zinc-500 font-mono mt-1">of 70K · HackOn 6.0</dt>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div
+          class="bento-card p-6 rounded-2xl bg-surface border border-border md:col-span-2 flex flex-col justify-center">
+          <i data-lucide="layout-template" class="w-5 h-5 text-emerald-400 mb-4"></i>
+          <h2 class="text-lg font-bold text-white mb-2">How I work</h2>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            I like problems where performance and correctness both matter: a thread pool that saturates disk I/O, a game
+            server that keeps every room's state isolated, a login flow that has to work on a slow campus network. I
+            write
+            clean, testable code, measure before optimizing, and pick the tool that fits the job, whether that is C++,
+            Node.js, Python or Flutter.
+          </p>
+        </div>
+        <div class="bento-card p-6 rounded-2xl bg-surface border border-border flex flex-col justify-center">
+          <i data-lucide="activity" class="w-5 h-5 text-cyan-400 mb-4"></i>
+          <h2 class="text-lg font-bold text-white mb-2">Currently exploring</h2>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            CI/CD pipelines, cloud deployment and scaling techniques for high-concurrency backends.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="space-y-8">
+      <div>
+        <h2 class="text-3xl font-extrabold text-white">Featured projects</h2>
+        <p class="text-zinc-500 text-sm mt-2">Built, shipped and measured. Each links to source.</p>
+      </div>
+
+      <div class="space-y-6">
+
+        <!-- Student Portal -->
+        <article class="reveal bento-card p-6 sm:p-8 rounded-2xl bg-surface border border-border">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+            <h3 class="text-xl font-bold text-white">Student Portal App <span class="text-cyan-400">·</span> <span
+                class="text-cyan-400 font-mono text-sm">Production</span></h3>
+            <span class="text-xs font-mono text-zinc-500">Flutter · Dart · BLoC · Firebase</span>
+          </div>
+          <p class="text-sm text-zinc-300 leading-relaxed mb-4">
+            Cross-platform app that gives NIT Jamshedpur students attendance, results and campus info in one place,
+            replacing a slow legacy ERP portal.
+          </p>
+          <ul class="text-sm text-zinc-400 space-y-2 mb-5">
+            <li class="flex gap-2"><span class="text-cyan-400">▹</span> <span><strong class="text-zinc-200">400+ active
+                  students</strong> use it, published on the Indus App Store.</span></li>
+            <li class="flex gap-2"><span class="text-cyan-400">▹</span> <span>Engineered a security bypass layer using
+                runtime JavaScript injection and User-Agent spoofing to automate the legacy ERP's multi-hop
+                authentication, reducing login latency by <strong class="text-zinc-200">90% (120s to
+                  10s)</strong>.</span></li>
+            <li class="flex gap-2"><span class="text-cyan-400">▹</span> <span>Secured stored credentials with AES
+                encryption.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mb-5 text-[11px] font-mono">
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">Flutter</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">BLoC</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">Firebase</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">AES</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-5">
+            <a href="https://github.com/Ayush-K-Garg/Nitjsrattendance" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-xs font-mono text-white hover:text-cyan-400 transition">
+              <i data-lucide="github" class="w-4 h-4"></i> Source code
+            </a>
+            <a href="https://www.phonepeappstore.com/apps/education/attendance/com.example.attend/?page=details&id=com.example.attend"
+              target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-xs font-mono text-white hover:text-cyan-400 transition">
+              <i data-lucide="smartphone" class="w-4 h-4"></i> Indus App Store
+            </a>
+          </div>
+        </article>
+
+        <!-- Distributed Storage -->
+        <article class="reveal bento-card p-6 sm:p-8 rounded-2xl bg-surface border border-border">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+            <h3 class="text-xl font-bold text-white">Distributed File Storage System</h3>
+            <span class="text-xs font-mono text-zinc-500">C++17 · TCP/UDP · Docker</span>
+          </div>
+          <p class="text-sm text-zinc-300 leading-relaxed mb-4">
+            Master-slave storage cluster that stores files across nodes and survives node failures.
+          </p>
+          <ul class="text-sm text-zinc-400 space-y-2 mb-5">
+            <li class="flex gap-2"><span class="text-emerald-400">▹</span> <span>Sustains <strong
+                  class="text-zinc-200">60 MB/s concurrent I/O</strong> using a custom C++ thread pool.</span></li>
+            <li class="flex gap-2"><span class="text-emerald-400">▹</span> <span><strong
+                  class="text-zinc-200">Replication factor 2</strong> for fault tolerance, with SHA-256 integrity checks
+                on every chunk.</span></li>
+            <li class="flex gap-2"><span class="text-emerald-400">▹</span> <span>UDP heartbeats for dynamic node
+                discovery; TCP for node-to-node transfer; Dockerized cluster.</span></li>
+          </ul>
+          <a href="https://github.com/Ayush-K-Garg/Distributed-file-storage-system" target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-xs font-mono text-white hover:text-emerald-400 transition">
+            <i data-lucide="github" class="w-4 h-4"></i> Source code
+          </a>
+        </article>
+
+        <!-- TrivIQ -->
+        <article class="reveal bento-card p-6 sm:p-8 rounded-2xl bg-surface border border-border">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+            <h3 class="text-xl font-bold text-white">TrivIQ Multiplayer</h3>
+            <span class="text-xs font-mono text-zinc-500">Node.js · Socket.IO · Flutter · MongoDB</span>
+          </div>
+          <p class="text-sm text-zinc-300 leading-relaxed mb-4">
+            Real-time multiplayer quiz platform with room-based sessions and live leaderboards.
+          </p>
+          <ul class="text-sm text-zinc-400 space-y-2 mb-5">
+            <li class="flex gap-2"><span class="text-amber-400">▹</span> <span>Room-based backend with strict game-state
+                isolation, so many sessions run at once without interference.</span></li>
+            <li class="flex gap-2"><span class="text-amber-400">▹</span> <span>Bidirectional WebSockets keep
+                leaderboards in sync with <strong class="text-zinc-200">sub-200ms latency</strong>.</span></li>
+          </ul>
+          <a href="https://github.com/Ayush-K-Garg/quiz-backend" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-xs font-mono text-white hover:text-amber-400 transition">
+            <i data-lucide="github" class="w-4 h-4"></i> Source code
+          </a>
+        </article>
+
+        <!-- CodeExplain -->
+        <article class="reveal bento-card p-6 sm:p-8 rounded-2xl bg-surface border border-border">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+            <h3 class="text-xl font-bold text-white">CodeExplain <span class="text-zinc-500 font-normal">(GenAI /
+                RAG)</span></h3>
+            <span class="text-xs font-mono text-zinc-500">Python · FastAPI · FAISS · Gemini · LangChain</span>
+          </div>
+          <p class="text-sm text-zinc-300 leading-relaxed mb-4">
+            Paste a GitHub repo and ask questions about the codebase in plain English.
+          </p>
+          <ul class="text-sm text-zinc-400 space-y-2 mb-5">
+            <li class="flex gap-2"><span class="text-purple-400">▹</span> <span>Custom <strong
+                  class="text-zinc-200">AST-aware splitters</strong> keep class and function boundaries intact, so
+                retrieved context makes sense.</span></li>
+            <li class="flex gap-2"><span class="text-purple-400">▹</span> <span>Batches embeddings into 15-chunk
+                micro-transactions to run within a <strong class="text-zinc-200">100 MB RAM</strong> host limit.</span>
+            </li>
+            <li class="flex gap-2"><span class="text-purple-400">▹</span> <span>3-tier FastAPI backend with FAISS vector
+                search.</span></li>
+          </ul>
+          <a href="https://github.com/Ayush-K-Garg/CodeExplain-GenAI-Langchain" target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-xs font-mono text-white hover:text-purple-400 transition">
+            <i data-lucide="github" class="w-4 h-4"></i> Source code
+          </a>
+        </article>
+
+        <!-- TODO: add Real-time Collaborative Code Editor card here (same structure as above) -->
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION -->
+    <section id="experience" class="space-y-6">
+      <h2 class="text-3xl font-extrabold text-white">Experience &amp; education</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="reveal bento-card p-6 md:p-8 rounded-2xl bg-surface border border-border">
+          <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+            <i data-lucide="briefcase" class="w-5 h-5 text-emerald-400"></i> Leadership
+          </h3>
+          <div class="flex justify-between items-start gap-2 mb-1">
+            <div class="font-bold text-zinc-200">Head of App Development</div>
+            <div class="text-xs font-mono text-zinc-500 whitespace-nowrap">Aug 2024 – Present</div>
+          </div>
+          <div class="text-sm text-zinc-400 mb-3">SECE (Society of ECE), NIT Jamshedpur</div>
+          <ul class="text-sm text-zinc-400 space-y-2 list-disc pl-5">
+            <li>Lead a 3-member team shipping cross-platform apps to real users.</li>
+            <li>Published apps on the Indus App Store, reaching 400+ students.</li>
+            <li>Mentor juniors in Flutter, Git workflows and full-stack integration.</li>
+          </ul>
+        </div>
+
+        <div class="reveal bento-card p-6 md:p-8 rounded-2xl bg-surface border border-border">
+          <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-cyan-400"></i> Education
+          </h3>
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between items-start gap-2 mb-1">
+                <div class="font-bold text-zinc-200">NIT Jamshedpur</div>
+                <div class="text-xs font-mono text-zinc-500 whitespace-nowrap">2023 – 2027</div>
+              </div>
+              <div class="text-sm text-zinc-400 mb-1">B.Tech, Electronics &amp; Communication Engineering</div>
+              <div class="text-sm font-mono text-emerald-400 font-semibold">CGPA 8.40 / 10</div>
+            </div>
+            <div class="pt-4 border-t border-white/5">
+              <div class="flex justify-between items-start gap-2 mb-1">
+                <div class="font-bold text-zinc-200">The Chintels School, Kanpur</div>
+                <div class="text-xs font-mono text-zinc-500 whitespace-nowrap">2023</div>
+              </div>
+              <div class="text-sm text-zinc-400">ISC (Class 12): 96.5% · ICSE (Class 10): 97.0%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="space-y-6">
+      <h2 class="text-3xl font-extrabold text-white">Achievements</h2>
+      <div class="reveal grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bento-card p-6 rounded-2xl bg-surface border border-border flex gap-4">
+          <i data-lucide="trophy" class="w-5 h-5 text-amber-400 shrink-0 mt-1"></i>
+          <div>
+            <div class="font-bold text-zinc-200">Semi-Finalist in Amazon HackOn 6.0: Top 300 of 70K+ participants</div>
+            <div class="text-sm text-zinc-400 mt-1">Advanced past the early rounds of a national-scale hackathon.</div>
+          </div>
+        </div>
+        <div class="bento-card p-6 rounded-2xl bg-surface border border-border flex gap-4">
+          <i data-lucide="code-2" class="w-5 h-5 text-emerald-400 shrink-0 mt-1"></i>
+          <div>
+            <div class="font-bold text-zinc-200">LeetCode rating 1828 (top 7%)</div>
+            <div class="text-sm text-zinc-400 mt-1">800+ DSA problems solved, with a strong competitive programming
+              background.</div>
+          </div>
+        </div>
+        <div class="bento-card p-6 rounded-2xl bg-surface border border-border flex gap-4">
+          <i data-lucide="users" class="w-5 h-5 text-cyan-400 shrink-0 mt-1"></i>
+          <div>
+            <div class="font-bold text-zinc-200">400+ students use my app daily</div>
+            <div class="text-sm text-zinc-400 mt-1">Shipped to the Indus App Store and adopted across NIT Jamshedpur.
+            </div>
+          </div>
+        </div>
+        <div class="bento-card p-6 rounded-2xl bg-surface border border-border flex gap-4">
+          <i data-lucide="award" class="w-5 h-5 text-purple-400 shrink-0 mt-1"></i>
+          <div>
+            <div class="font-bold text-zinc-200">JEE percentile 98.84 · ISC 96.5% · ICSE 97.0%</div>
+            <div class="text-sm text-zinc-400 mt-1">Consistently strong academics, leading to admission at NIT
+              Jamshedpur.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="space-y-6">
+      <h2 class="text-3xl font-extrabold text-white">Skills</h2>
+      <div class="reveal grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="p-6 rounded-2xl bg-surface border border-border">
+          <h3 class="font-mono text-xs text-emerald-400 mb-3">LANGUAGES</h3>
+          <div class="flex flex-wrap gap-2 text-[12px] font-mono">
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">C++</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">Python</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">JavaScript</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">Dart</span>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-surface border border-border">
+          <h3 class="font-mono text-xs text-cyan-400 mb-3">BACKEND &amp; DATA</h3>
+          <div class="flex flex-wrap gap-2 text-[12px] font-mono">
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">Node.js</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">FastAPI</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">REST APIs</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">Socket.IO</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">MongoDB</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">PostgreSQL</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">Firebase</span>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-surface border border-border">
+          <h3 class="font-mono text-xs text-amber-400 mb-3">FRONTEND &amp; MOBILE</h3>
+          <div class="flex flex-wrap gap-2 text-[12px] font-mono">
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">Flutter</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">BLoC</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">React.js</span>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-surface border border-border">
+          <h3 class="font-mono text-xs text-purple-400 mb-3">TOOLS &amp; FUNDAMENTALS</h3>
+          <div class="flex flex-wrap gap-2 text-[12px] font-mono">
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">Docker</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">Linux CLI</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">Git</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">DSA</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">System design basics</span>
+            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-zinc-300">RAG / LangChain</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="pt-12 border-t border-border">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+        <div class="md:w-1/3">
+          <h2 class="text-3xl font-extrabold text-white mb-2">Let's talk.</h2>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            I'm looking for SDE internships and full-time roles starting 2027. The fastest way to reach me is email.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-4 w-full md:w-2/3">
+          <a href="mailto:017ayushgarg@gmail.com"
+            class="bento-card flex items-center gap-4 p-5 rounded-xl bg-surface border border-border hover:bg-white/10 transition group w-full">
+            <i data-lucide="mail" class="w-5 h-5 text-zinc-400 group-hover:text-emerald-400 transition"></i>
+            <span class="text-sm font-medium text-zinc-200 break-all">017ayushgarg@gmail.com</span>
+          </a>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a href="https://github.com/Ayush-K-Garg" target="_blank" rel="noopener noreferrer"
+              class="bento-card flex items-center gap-3 p-4 rounded-xl bg-surface border border-border hover:bg-white/10 transition group">
+              <i data-lucide="github" class="w-5 h-5 text-zinc-400 group-hover:text-white transition"></i>
+              <span class="text-sm font-medium text-zinc-300">GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/ayush-krishna-garg-7aa61a28a/" target="_blank"
+              rel="noopener noreferrer"
+              class="bento-card flex items-center gap-3 p-4 rounded-xl bg-surface border border-border hover:bg-white/10 transition group">
+              <i data-lucide="linkedin" class="w-5 h-5 text-zinc-400 group-hover:text-cyan-400 transition"></i>
+              <span class="text-sm font-medium text-zinc-300">LinkedIn</span>
+            </a>
+            <a href="https://leetcode.com/u/diuk3VAt95/" target="_blank" rel="noopener noreferrer"
+              class="bento-card flex items-center gap-3 p-4 rounded-xl bg-surface border border-border hover:bg-white/10 transition group">
+              <i data-lucide="code-2" class="w-5 h-5 text-zinc-400 group-hover:text-amber-400 transition"></i>
+              <span class="text-sm font-medium text-zinc-300">LeetCode</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center text-xs font-mono text-zinc-600">
+        © 2026 Ayush Krishna Garg
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+
+      // Scroll reveal
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+      // Active nav link
+      const links = [...document.querySelectorAll('.nav-link')];
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      document.querySelectorAll('section[id]').forEach(s => spy.observe(s));
+    });
+  </script>
+</body>
+
+</html>
