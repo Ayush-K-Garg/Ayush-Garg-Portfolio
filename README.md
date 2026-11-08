@@ -1,6 +1,6 @@
 # Ayush Krishna Garg — Portfolio & Systems Engineering Showcase
 
-> Live Site: [https://ayush-k-garg.github.io](https://ayush-k-garg.github.io/)
+> Live Site: [https://ayush-k-garg.github.io/Ayush-Garg-Portfolio/](https://ayush-k-garg.github.io/Ayush-Garg-Portfolio/)
 
 Personal portfolio of **Ayush Krishna Garg** — B.Tech in Electronics and Communication Engineering at **National Institute of Technology, Jamshedpur** ('27).
 
@@ -17,7 +17,7 @@ Personal portfolio of **Ayush Krishna Garg** — B.Tech in Electronics and Commu
 4. **TrivIQ** (`Node.js`, `Express`, `Socket.IO`, `MongoDB`, `Firebase`) — Real-time multiplayer WebSocket platform with isolated room state engine.
 
 ### 📬 Connect
-- **Portfolio:** [ayush-k-garg.github.io](https://ayush-k-garg.github.io/)
+- **Portfolio:** [ayush-k-garg.github.io/Ayush-Garg-Portfolio](https://ayush-k-garg.github.io/Ayush-Garg-Portfolio/)
 - **LinkedIn:** [ayush-krishna-garg](https://www.linkedin.com/in/ayush-krishna-garg-7aa61a28a/)
 - **LeetCode:** [diuk3VAt95](https://leetcode.com/u/diuk3VAt95/)
 - **Email:** 017ayushgarg@gmail.com
